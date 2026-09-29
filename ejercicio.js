@@ -17,6 +17,15 @@ function listarPares(){
         console.log(i);
     }
 }
+
+
+function listarImpares(){
+    for(let i=1;i<=7;i+=2){
+        console.log(i);
+    }
+}
+
+
 //Funcion de Ejecucion de Botones
 function ejecutar(numEjercicio ){
     if(numEjercicio==1){
@@ -25,5 +34,7 @@ function ejecutar(numEjercicio ){
         listarNumerosReversa();
     }else if(numEjercicio==3){
         listarPares();
+    }else if(numEjercicio==4){
+        listarImpares(); 
     }
 }
