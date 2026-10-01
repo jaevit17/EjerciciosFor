@@ -1,0 +1,15 @@
+Toma un rol de programador fullStack
+
+Objetivo: genera una página HTML y una hoja de estilos por 
+separado
+
+Acciones:
+-Muestra la tabla del 3.
+-La página debe incluir un botón con el texto 
+PROBAR en la parte superior. 
+-El diseño debe ser totalmente responsive con todos los dispositivos.
+-No usar JavaScript.
+-Tener una idea en diseño profesional no Style mas estructura
+-Entender que vamos a trabajar en una web de Tablas de multiplicar moderna (no hacer nada aun solo entender).
+
+Dame el nuevo codigo HTML y CSS por separado
