@@ -1,0 +1,31 @@
+Toma el rol de Programador FullStack y Diseñador UX/UI Senior
+con experiencia en interfaces intuitivas de alta calidad siguiendo 
+los principios de diseño de los mejores FullStack.
+
+Objetivo: Mejorar la interfaz con instrucciones claras, mensajes 
+de ayuda y textos intuitivos para que cualquier persona pueda utilizar 
+la página sin explicaciones externas.
+
+Acciones:
+
+1. Añade instrucciones breves y claras que indiquen al usuario qué hacer, 
+dónde ingresar datos y qué botón presionar sin Alterar el diseño y dinamismo 
+original de la Web actual.
+2. Incorpora mensajes de ayuda junto a los elementos que puedan generar 
+confusión.
+3. Utiliza textos sencillos, legibles e intuitivos para personas de cualquier
+ edad.
+4. Mantén intactos el diseño general, colores, animaciones, funcionalidades, 
+IDs, clases y Responsive existente.
+5. Evita elementos innecesarios, exceso de texto y cambios visuales exagerados.
+6. Modifica únicamente el HTML y CSS necesarios.
+7. Diferencia con imponencia de color tematico los DIVs.
+8. Crea un fondo de Web Bacground unico profesional matematica para llamar 
+a atencion de todo tipo de usuarios se totalmente creativo para que la web
+ no sea tan fondo blanco con Divs blancos crea animaciones unica bolas difuminadas 
+flotantes simbolos matematicos.
+9. Has que cuando el usuario ingrese mas de 3 numeros en el input el mismo 
+se achique porque sino cuando pongo numeros de cifras grandes desaparecern 
+las primeras sin alterar en absoluto el STYLES actual. del h1 e input.
+
+Entrega HTML y CSS por separado.
