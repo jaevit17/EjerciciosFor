@@ -799,6 +799,282 @@ footer small {
 }
 
 
+
+/* =========================================
+   CAPA MATEMÁTICA INTERACTIVA
+   ========================================= */
+
+body {
+    position: relative;
+    isolation: isolate;
+}
+
+.universo-matematico {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.045), transparent 38%),
+        radial-gradient(circle at 8% 80%, rgba(168, 85, 247, 0.08), transparent 30%),
+        radial-gradient(circle at 92% 12%, rgba(37, 99, 235, 0.07), transparent 30%);
+}
+
+.burbuja {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.42;
+    animation: orbitarMatematica 12s ease-in-out infinite;
+}
+
+.burbuja-1 {
+    width: 190px;
+    height: 190px;
+    top: 8%;
+    left: -55px;
+    background: radial-gradient(circle at 35% 30%, rgba(168, 85, 247, 0.24), rgba(124, 58, 237, 0.02) 70%);
+}
+
+.burbuja-2 {
+    width: 250px;
+    height: 250px;
+    right: -90px;
+    top: 34%;
+    background: radial-gradient(circle at 40% 40%, rgba(37, 99, 235, 0.17), rgba(37, 99, 235, 0.015) 72%);
+    animation-delay: -4s;
+}
+
+.burbuja-3 {
+    width: 145px;
+    height: 145px;
+    left: 15%;
+    bottom: -45px;
+    background: radial-gradient(circle at 40% 35%, rgba(217, 70, 239, 0.17), rgba(124, 58, 237, 0.015) 70%);
+    animation-delay: -7s;
+}
+
+.burbuja-4 {
+    width: 110px;
+    height: 110px;
+    right: 17%;
+    top: 8%;
+    background: radial-gradient(circle at 40% 35%, rgba(124, 58, 237, 0.15), transparent 72%);
+    animation-delay: -2s;
+}
+
+.formula,
+.punto-matematico {
+    position: absolute;
+    color: rgba(91, 33, 182, 0.11);
+    user-select: none;
+    white-space: nowrap;
+}
+
+.formula {
+    font-size: clamp(1rem, 2vw, 1.7rem);
+    font-weight: 700;
+    letter-spacing: 1px;
+    animation: formulaFlotante 9s ease-in-out infinite;
+}
+
+.formula-1 { top: 12%; left: 5%; }
+.formula-2 { top: 25%; right: 7%; animation-delay: -2s; }
+.formula-3 { bottom: 20%; left: 7%; animation-delay: -4s; }
+.formula-4 { bottom: 11%; right: 8%; animation-delay: -6s; }
+.formula-5 { top: 65%; left: 78%; animation-delay: -3s; }
+
+.punto-matematico {
+    font-size: clamp(1.8rem, 4vw, 3.4rem);
+    font-weight: 800;
+    opacity: 0.09;
+    animation: simboloProfundo 7s ease-in-out infinite;
+}
+
+.punto-1 { top: 18%; left: 25%; }
+.punto-2 { top: 55%; right: 20%; animation-delay: -2s; }
+.punto-3 { bottom: 15%; left: 25%; animation-delay: -4s; }
+.punto-4 { top: 38%; left: 3%; animation-delay: -5s; }
+
+@keyframes orbitarMatematica {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+        transform: translate3d(24px, -22px, 0) scale(1.08);
+    }
+}
+
+@keyframes formulaFlotante {
+    0%, 100% {
+        transform: translate3d(0, 8px, 0) rotate(-2deg);
+    }
+    50% {
+        transform: translate3d(0, -16px, 0) rotate(2deg);
+    }
+}
+
+@keyframes simboloProfundo {
+    0%, 100% {
+        transform: translateY(5px) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-18px) rotate(5deg);
+    }
+}
+
+
+/* =========================================
+   AYUDAS E INSTRUCCIONES
+   ========================================= */
+
+.ayuda-tabla {
+    display: block;
+    margin-top: 9px;
+    color: #7c3aed;
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.encabezado-texto {
+    position: relative;
+}
+
+.tabla-ayuda {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 18px;
+    border-top: 1px solid rgba(124, 58, 237, 0.12);
+    border-bottom: 1px solid rgba(124, 58, 237, 0.12);
+    background: linear-gradient(
+        90deg,
+        rgba(124, 58, 237, 0.055),
+        rgba(168, 85, 247, 0.025)
+    );
+    color: #4c1d95;
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+.tabla-ayuda-icono {
+    flex: 0 0 auto;
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #7c3aed;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    box-shadow: 0 5px 14px rgba(124, 58, 237, 0.2);
+}
+
+
+/* =========================================
+   DIFERENCIACIÓN TEMÁTICA DE SECCIONES
+   ========================================= */
+
+.encabezado,
+.tabla-container,
+footer {
+    position: relative;
+}
+
+.encabezado::after,
+.tabla-container::after,
+footer::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.encabezado::after {
+    width: 75px;
+    height: 4px;
+    left: 0;
+    bottom: -18px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #2563eb, #7c3aed, #c026d3);
+}
+
+.tabla-container {
+    box-shadow:
+        0 12px 30px rgba(20, 20, 30, 0.05),
+        inset 4px 0 0 rgba(124, 58, 237, 0.65);
+}
+
+footer::after {
+    width: 90px;
+    height: 2px;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: linear-gradient(90deg, #2563eb, #7c3aed, #c026d3);
+}
+
+
+/* =========================================
+   NÚMEROS LARGOS SIN PERDER VISIBILIDAD
+   ========================================= */
+
+/*
+   No se modifica el diseño tipográfico existente del h1 ni del input.
+   field-sizing permite que el campo se adapte al contenido en navegadores
+   modernos, evitando que un número largo quede oculto dentro del input.
+*/
+.numero-tabla {
+    field-sizing: content;
+    max-width: 100%;
+    overflow: visible;
+}
+
+
+/* =========================================
+   AJUSTE DE AYUDAS EN MÓVIL
+   ========================================= */
+
+@media (max-width: 520px) {
+    .tabla-ayuda {
+        align-items: flex-start;
+        padding: 11px 13px;
+        font-size: 0.8rem;
+    }
+
+    .ayuda-tabla {
+        font-size: 0.78rem;
+    }
+
+    .formula {
+        opacity: 0.75;
+    }
+
+    .formula-5,
+    .punto-4 {
+        display: none;
+    }
+}
+
+@media (max-width: 350px) {
+    .tabla-ayuda {
+        gap: 7px;
+        font-size: 0.75rem;
+    }
+
+    .tabla-ayuda-icono {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+
 /* =========================================
    REDUCCIÓN DE MOVIMIENTO
    ========================================= */
@@ -812,5 +1088,712 @@ footer small {
         animation-iteration-count: 1 !important;
 
         transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================================
+   REFINAMIENTO PROFESIONAL — SIN CAMBIAR ANIMACIONES BASE
+   ========================================================= */
+
+/* Fondo matemático más presente: misma animación, mayor fuerza visual */
+.universo-matematico {
+    background:
+        radial-gradient(circle at 8% 12%, rgba(124, 58, 237, 0.22), transparent 30%),
+        radial-gradient(circle at 92% 18%, rgba(37, 99, 235, 0.18), transparent 31%),
+        radial-gradient(circle at 12% 88%, rgba(192, 38, 211, 0.16), transparent 28%),
+        radial-gradient(circle at 88% 82%, rgba(168, 85, 247, 0.18), transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.09), transparent 42%),
+        #f7f5ff;
+}
+
+.universo-matematico .burbuja {
+    opacity: 0.72;
+}
+
+.universo-matematico .formula,
+.universo-matematico .punto-matematico {
+    color: rgba(91, 33, 182, 0.28);
+    text-shadow:
+        0 0 18px rgba(124, 58, 237, 0.12);
+}
+
+.universo-matematico .punto-matematico {
+    opacity: 0.22;
+}
+
+/* Logo: invitación táctil en pantallas móviles */
+.logo-matematico {
+    position: relative;
+    z-index: 3;
+}
+
+@keyframes logoLlamada {
+    0%, 72%, 100% {
+        transform: translateX(0) rotate(0);
+    }
+    76% {
+        transform: translateX(-3px) rotate(-4deg);
+    }
+    80% {
+        transform: translateX(3px) rotate(4deg);
+    }
+    84% {
+        transform: translateX(-2px) rotate(-3deg);
+    }
+    88% {
+        transform: translateX(2px) rotate(3deg);
+    }
+    92% {
+        transform: translateX(0) rotate(0);
+    }
+}
+
+@media (max-width: 520px) {
+    .logo-matematico {
+        animation: logoLlamada 3.2s ease-in-out infinite;
+    }
+
+    /* En móvil el color aparece al tocar, no por hover */
+    .logo-matematico:hover {
+        transform: none;
+        background: #111116;
+        box-shadow: 0 8px 20px rgba(17, 17, 22, 0.18);
+    }
+
+    .logo-matematico:active {
+        animation: none;
+        transform: scale(0.94) rotate(-4deg);
+        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        box-shadow: 0 12px 28px rgba(124, 58, 237, 0.34);
+    }
+}
+
+/* Número largo: desde la 4.ª cifra reduce solo el tamaño del input */
+.numero-tabla {
+    field-sizing: content;
+    max-width: 100%;
+    overflow: visible;
+}
+
+.numero-tabla.numero-largo {
+    font-size: 0.78em;
+    letter-spacing: -2px;
+}
+
+.numero-tabla.numero-muy-largo {
+    font-size: 0.62em;
+    letter-spacing: -1.5px;
+}
+
+.numero-tabla.numero-extremo {
+    font-size: 0.50em;
+    letter-spacing: -1px;
+}
+
+/* Aviso instantáneo cuando el campo queda vacío */
+.aviso-input {
+    display: none;
+    position: absolute;
+    left: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: #111116;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    box-shadow: 0 8px 20px rgba(17, 17, 22, 0.18);
+    animation: avisoEntrada 0.18s ease both;
+    pointer-events: none;
+}
+
+.aviso-input::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background: #111116;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.encabezado-texto.input-vacio .aviso-input {
+    display: block;
+}
+
+@keyframes avisoEntrada {
+    from {
+        opacity: 0;
+        transform: translate(-5px, -50%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, -50%);
+    }
+}
+
+@media (max-width: 700px) {
+    .aviso-input {
+        left: auto;
+        right: 0;
+        top: calc(100% + 10px);
+        transform: none;
+    }
+
+    .aviso-input::before {
+        left: auto;
+        right: 18px;
+        top: -5px;
+        transform: rotate(45deg);
+    }
+
+    .encabezado-texto.input-vacio .aviso-input {
+        transform: none;
+    }
+}
+
+@media (max-width: 520px) {
+    .universo-matematico .formula,
+    .universo-matematico .punto-matematico {
+        color: rgba(91, 33, 182, 0.34);
+    }
+
+    .numero-tabla.numero-largo {
+        font-size: 0.76em;
+    }
+
+    .numero-tabla.numero-muy-largo {
+        font-size: 0.60em;
+    }
+
+    .numero-tabla.numero-extremo {
+        font-size: 0.48em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo-matematico {
+        animation: none !important;
+    }
+}
+
+/* =========================================================
+   MEJORAS PROFESIONALES
+   ========================================================= */
+
+
+/* =========================================================
+   FONDO MATEMÁTICO MÁS VISIBLE
+   Mantiene las animaciones existentes.
+   ========================================================= */
+
+.universo-matematico {
+
+    background:
+
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(124, 58, 237, 0.22),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 92% 18%,
+            rgba(37, 99, 235, 0.18),
+            transparent 31%
+        ),
+
+        radial-gradient(
+            circle at 12% 88%,
+            rgba(192, 38, 211, 0.16),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 88% 82%,
+            rgba(168, 85, 247, 0.18),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(124, 58, 237, 0.09),
+            transparent 42%
+        ),
+
+        #f7f5ff;
+}
+
+
+/* Hacer visibles los elementos matemáticos
+   sin cambiar sus animaciones */
+
+.universo-matematico .burbuja {
+
+    opacity: 0.72;
+}
+
+
+.universo-matematico .formula {
+
+    color: rgba(91, 33, 182, 0.28);
+
+    text-shadow:
+        0 0 18px rgba(124, 58, 237, 0.12);
+}
+
+
+.universo-matematico .punto-matematico {
+
+    color: rgba(91, 33, 182, 0.28);
+
+    opacity: 0.35;
+
+    text-shadow:
+        0 0 18px rgba(124, 58, 237, 0.12);
+}
+
+
+
+/* =========================================================
+   INPUT DE LA TABLA
+   ========================================================= */
+
+.numero-tabla {
+
+    max-width: none;
+
+    overflow: visible;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   NÚMERO DE 4 Y 5 CIFRAS
+   ========================================================= */
+
+.numero-tabla.numero-largo {
+
+    width: 2.4em;
+
+    font-size: 0.78em;
+
+    letter-spacing: -2px;
+}
+
+
+/* =========================================================
+   NÚMERO DE 6 A 8 CIFRAS
+   ========================================================= */
+
+.numero-tabla.numero-muy-largo {
+
+    width: 3.8em;
+
+    font-size: 0.62em;
+
+    letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   NÚMERO DE 9 CIFRAS O MÁS
+   ========================================================= */
+
+.numero-tabla.numero-extremo {
+
+    width: 5.5em;
+
+    font-size: 0.50em;
+
+    letter-spacing: -1px;
+}
+
+
+
+/* =========================================================
+   IMPORTANTE:
+   El aviso debe tomar como referencia el encabezado.
+   ========================================================= */
+
+.encabezado-texto h1 {
+
+    position: relative;
+}
+
+
+
+/* =========================================================
+   MENSAJE CUANDO EL INPUT ESTÁ VACÍO
+   ========================================================= */
+
+.aviso-input {
+
+    display: none;
+
+    position: absolute;
+
+    left: calc(100% + 12px);
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    white-space: nowrap;
+
+    padding: 7px 11px;
+
+    border-radius: 9px;
+
+    background: #111116;
+
+    color: #ffffff;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    box-shadow:
+        0 8px 20px rgba(17, 17, 22, 0.18);
+
+    animation:
+        avisoEntrada 0.18s ease both;
+
+    pointer-events: none;
+
+    z-index: 20;
+}
+
+
+/* Pequeña flecha del mensaje */
+
+.aviso-input::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -5px;
+
+    top: 50%;
+
+    width: 10px;
+
+    height: 10px;
+
+    background: #111116;
+
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+}
+
+
+/* Mostrar aviso */
+
+.encabezado-texto.input-vacio .aviso-input {
+
+    display: block;
+}
+
+
+@keyframes avisoEntrada {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-50%)
+            translateX(-5px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(-50%)
+            translateX(0);
+    }
+}
+
+
+
+/* =========================================================
+   LOGO: VIBRACIÓN TIPO LLAMADA
+   ========================================================= */
+
+@keyframes logoLlamada {
+
+    0%,
+    72%,
+    100% {
+
+        transform:
+            translateX(0)
+            rotate(0);
+    }
+
+
+    76% {
+
+        transform:
+            translateX(-3px)
+            rotate(-4deg);
+    }
+
+
+    80% {
+
+        transform:
+            translateX(3px)
+            rotate(4deg);
+    }
+
+
+    84% {
+
+        transform:
+            translateX(-2px)
+            rotate(-3deg);
+    }
+
+
+    88% {
+
+        transform:
+            translateX(2px)
+            rotate(3deg);
+    }
+
+
+    92% {
+
+        transform:
+            translateX(0)
+            rotate(0);
+    }
+}
+
+
+
+/* =========================================================
+   TABLET / MÓVIL
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .numero-tabla.numero-largo {
+
+        width: 2.5em;
+
+        font-size: 0.76em;
+    }
+
+
+    .numero-tabla.numero-muy-largo {
+
+        width: 3.9em;
+
+        font-size: 0.60em;
+    }
+
+
+    .numero-tabla.numero-extremo {
+
+        width: 5.6em;
+
+        font-size: 0.48em;
+    }
+}
+
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+
+    /* Logo que llama la atención */
+
+    .logo-matematico {
+
+        animation:
+            logoLlamada 3.2s ease-in-out infinite;
+    }
+
+
+    /* Al pasar mouse no cambia de color */
+
+    .logo-matematico:hover {
+
+        transform: none;
+
+        background: #111116;
+
+        box-shadow:
+            0 8px 20px rgba(17, 17, 22, 0.18);
+    }
+
+
+    /* Al tocar el logo */
+
+    .logo-matematico:active {
+
+        animation: none;
+
+        transform:
+            scale(0.94)
+            rotate(-4deg);
+
+        background:
+            linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
+
+        box-shadow:
+            0 12px 28px
+            rgba(124, 58, 237, 0.34);
+    }
+
+
+
+    /* -----------------------------------------
+       Números grandes en móvil
+       ----------------------------------------- */
+
+
+    .numero-tabla.numero-largo {
+
+        width: 2.6em;
+
+        font-size: 0.74em;
+
+        letter-spacing: -1.8px;
+    }
+
+
+    .numero-tabla.numero-muy-largo {
+
+        width: 4em;
+
+        font-size: 0.58em;
+
+        letter-spacing: -1.2px;
+    }
+
+
+    .numero-tabla.numero-extremo {
+
+        width: 5.8em;
+
+        font-size: 0.46em;
+
+        letter-spacing: -0.8px;
+    }
+
+
+
+    /* -----------------------------------------
+       Aviso debajo del campo en móvil
+       ----------------------------------------- */
+
+    .aviso-input {
+
+        left: 0;
+
+        top: calc(100% + 12px);
+
+        transform: none;
+
+        font-size: 0.68rem;
+    }
+
+
+    .aviso-input::before {
+
+        left: 18px;
+
+        top: -5px;
+
+        transform:
+            rotate(45deg);
+    }
+
+
+    @keyframes avisoEntrada {
+
+        from {
+
+            opacity: 0;
+
+            transform: translateY(-4px);
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+    }
+}
+
+
+
+/* =========================================================
+   MÓVILES MUY PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+    .numero-tabla.numero-largo {
+
+        width: 2.7em;
+
+        font-size: 0.70em;
+    }
+
+
+    .numero-tabla.numero-muy-largo {
+
+        width: 4.1em;
+
+        font-size: 0.55em;
+    }
+
+
+    .numero-tabla.numero-extremo {
+
+        width: 6em;
+
+        font-size: 0.43em;
+    }
+}
+
+
+
+/* =========================================================
+   REDUCCIÓN DE MOVIMIENTO
+   Respeta accesibilidad.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .logo-matematico {
+
+        animation: none !important;
     }
 }

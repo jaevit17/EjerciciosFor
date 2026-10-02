@@ -10,6 +10,22 @@
 
 <body>
 
+    <div class="universo-matematico" aria-hidden="true">
+        <span class="burbuja burbuja-1"></span>
+        <span class="burbuja burbuja-2"></span>
+        <span class="burbuja burbuja-3"></span>
+        <span class="burbuja burbuja-4"></span>
+        <span class="formula formula-1">x² + y²</span>
+        <span class="formula formula-2">π · r²</span>
+        <span class="formula formula-3">3 × 7</span>
+        <span class="formula formula-4">√81</span>
+        <span class="formula formula-5">a + b = c</span>
+        <span class="punto-matematico punto-1">+</span>
+        <span class="punto-matematico punto-2">×</span>
+        <span class="punto-matematico punto-3">÷</span>
+        <span class="punto-matematico punto-4">=</span>
+    </div>
+
     <main class="contenedor">
 
         <!-- Logo matemático -->
@@ -32,13 +48,18 @@
                         step="1"
                         value="3"
                         aria-label="Número de tabla"
+                        title="Escribe el número de la tabla que quieres practicar"
                     >
+                    <span class="aviso-input" aria-hidden="true">✎ Escribe un número</span>
                 </h1>
 
                 <p>
-                    Aprende, practica y domina las multiplicaciones
-                    de una forma sencilla.
+                    Elige el número de la tabla, escríbelo arriba y pulsa <strong>PROBAR</strong>.
+                    Después revisa los resultados de cada multiplicación.
                 </p>
+                <small class="ayuda-tabla">
+                    💡 Puedes escribir cualquier número entero positivo.
+                </small>
             </div>
 
             <button class="btn-probar" onclick="generarNumeroTabla()">
@@ -53,6 +74,11 @@
             <div class="tabla-header">
                 <span>Operación</span>
                 <span>Resultado</span>
+            </div>
+
+            <div class="tabla-ayuda" role="note">
+                <span class="tabla-ayuda-icono">✓</span>
+                <span><strong>¿Cómo practicar?</strong> Observa la operación y comprueba el resultado de cada fila.</span>
             </div>
 
             <div id="contenedorTablas">
