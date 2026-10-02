@@ -1,7 +1,6 @@
-
-/* ==============================
+/* =========================================
    CONFIGURACIÓN GENERAL
-   ============================== */
+   ========================================= */
 
 * {
     box-sizing: border-box;
@@ -9,234 +8,713 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f5f9;
-    color: #20212a;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+        "SF Pro Text", "Segoe UI", Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at 10% 15%,
+            rgba(124, 58, 237, 0.07),
+            transparent 28%),
+        radial-gradient(circle at 90% 85%,
+            rgba(59, 130, 246, 0.06),
+            transparent 28%),
+        #ffffff;
+
+    color: #111116;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 16px;
+
+    padding: 40px 20px;
+
+    overflow-x: hidden;
 }
 
 
-/* ==============================
+/* =========================================
    CONTENEDOR PRINCIPAL
-   ============================== */
+   ========================================= */
 
 .contenedor {
+    position: relative;
+
     width: 100%;
-    max-width: 900px;
-    background: #ffffff;
-    border: 1px solid #e4e5eb;
-    border-radius: 20px;
-    padding: 32px;
-    box-shadow: 0 15px 40px rgba(30, 30, 50, 0.08);
+    max-width: 920px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid rgba(17, 17, 22, 0.08);
+    border-radius: 28px;
+
+    padding: 48px;
+
+    box-shadow:
+        0 30px 80px rgba(20, 20, 30, 0.10),
+        0 8px 25px rgba(124, 58, 237, 0.08);
+
+    overflow: hidden;
+
+    animation: aparecer 0.7s ease both;
 }
 
 
-/* ==============================
+/* Línea violeta superior */
+
+.contenedor::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #111116,
+        #2563eb,
+        #7c3aed,
+        #111116
+    );
+}
+
+
+/* =========================================
+   LOGO MATEMÁTICO
+   ========================================= */
+
+.logo-matematico {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #111116;
+    color: #ffffff;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    box-shadow:
+        0 8px 20px rgba(17, 17, 22, 0.18);
+
+    margin-bottom: 30px;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.logo-matematico:hover {
+    transform: translateY(-3px) rotate(-4deg);
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    box-shadow:
+        0 12px 28px rgba(124, 58, 237, 0.25);
+}
+
+
+/* =========================================
    ENCABEZADO
-   ============================== */
+   ========================================= */
 
 .encabezado {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-    margin-bottom: 30px;
+    align-items: flex-end;
+
+    gap: 40px;
+
+    margin-bottom: 38px;
+}
+
+.encabezado-texto {
+    min-width: 0;
 }
 
 .etiqueta {
+    display: inline-block;
+
+    color: #6d28d9;
+
     font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #6d45d8;
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 10px;
 }
 
 h1 {
-    margin-top: 8px;
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    line-height: 1.1;
+    font-size: clamp(3rem, 7vw, 5rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+    font-weight: 700;
+
+    color: #111116;
 }
 
 h1 strong {
-    color: #6d45d8;
+    color: #7c3aed;
+
+    font-weight: 800;
 }
 
 .encabezado p {
-    margin-top: 10px;
-    color: #747784;
-    font-size: 0.95rem;
+    max-width: 550px;
+
+    margin-top: 18px;
+
+    color: #666873;
+
+    font-size: clamp(1rem, 2vw, 1.12rem);
+
+    line-height: 1.6;
 }
 
 
-/* ==============================
+/* =========================================
    BOTÓN PROBAR
-   ============================== */
+   ========================================= */
 
 .btn-probar {
+    position: relative;
+
+    flex-shrink: 0;
+
+    min-width: 140px;
+
     border: none;
-    background: #20212a;
-    color: white;
-    padding: 13px 25px;
-    border-radius: 10px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+
+    background: #111116;
+    color: #ffffff;
+
+    padding: 15px 28px;
+
+    border-radius: 13px;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
     cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 20px rgba(17, 17, 22, 0.18);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.5s ease;
+}
+
+
+/* Capa de color */
+
+.btn-probar::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        110deg,
+        #2563eb,
+        #4f46e5,
+        #7c3aed
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.45s ease;
+}
+
+.btn-probar {
+    isolation: isolate;
+}
+
+.btn-probar::after {
+    content: "PROBAR";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
 }
 
 .btn-probar:hover {
-    background: #6d45d8;
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 32px rgba(79, 70, 229, 0.28);
+}
+
+.btn-probar:hover::before {
+    opacity: 1;
 }
 
 
-/* ==============================
+/* =========================================
    TABLA
-   ============================== */
+   ========================================= */
 
 .tabla-container {
     width: 100%;
+
+    border: 1px solid rgba(17, 17, 22, 0.09);
+
+    border-radius: 20px;
+
     overflow: hidden;
-    border: 1px solid #e5e6eb;
-    border-radius: 14px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 12px 30px rgba(20, 20, 30, 0.05);
 }
+
+
+/* Cabecera */
 
 .tabla-header,
 .fila {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     align-items: center;
 }
 
 .tabla-header {
-    background: #f0eefb;
-    color: #5b42a8;
-    font-size: 0.8rem;
-    font-weight: 700;
+    min-height: 58px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #f4f1ff,
+            #faf9ff
+        );
+
+    color: #5b21b6;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
     text-transform: uppercase;
-    letter-spacing: 1px;
+
+    letter-spacing: 1.8px;
 }
 
-.tabla-header span,
-.fila span,
-.fila strong {
-    padding: 16px 22px;
+.tabla-header span {
+    padding: 18px 26px;
 }
+
+
+/* Filas */
 
 .fila {
-    border-top: 1px solid #eeeeF2;
-    transition: background 0.2s ease;
+    min-height: 66px;
+
+    border-top: 1px solid #eeeeF3;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
-.fila:hover {
-    background: #faf9ff;
+.fila span,
+.fila strong {
+    padding: 17px 26px;
 }
 
 .fila span {
-    font-size: 1rem;
+    color: #34353d;
+
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+
+    font-weight: 500;
 }
 
 .fila strong {
-    font-size: 1.05rem;
-    color: #6d45d8;
+    color: #111116;
+
+    font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+
+    font-weight: 750;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 
-/* ==============================
-   PIE
-   ============================== */
+/* Hover matemático */
+
+.fila:hover {
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #faf8ff
+        );
+}
+
+.fila:hover strong {
+    color: #7c3aed;
+
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   FOOTER MATEMÁTICO
+   ========================================= */
 
 footer {
+    position: relative;
+
     text-align: center;
-    margin-top: 25px;
-    color: #92949f;
-    font-size: 0.8rem;
+
+    margin-top: 42px;
+
+    padding-top: 8px;
+
+    overflow: hidden;
+}
+
+.simbolos-matematicos {
+    height: 45px;
+
+    position: relative;
+
+    margin-bottom: 12px;
+
+    pointer-events: none;
+}
+
+.simbolos-matematicos span {
+    position: absolute;
+
+    color: rgba(124, 58, 237, 0.13);
+
+    font-size: 1.8rem;
+
+    font-weight: 700;
+
+    animation: flotar 5s ease-in-out infinite;
+}
+
+.simbolos-matematicos span:nth-child(1) {
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.simbolos-matematicos span:nth-child(2) {
+    left: 23%;
+    animation-delay: 0.8s;
+}
+
+.simbolos-matematicos span:nth-child(3) {
+    left: 38%;
+    animation-delay: 1.4s;
+}
+
+.simbolos-matematicos span:nth-child(4) {
+    left: 54%;
+    animation-delay: 0.5s;
+}
+
+.simbolos-matematicos span:nth-child(5) {
+    left: 69%;
+    animation-delay: 1.8s;
+}
+
+.simbolos-matematicos span:nth-child(6) {
+    left: 82%;
+    animation-delay: 1s;
+}
+
+.simbolos-matematicos span:nth-child(7) {
+    left: 93%;
+    animation-delay: 2.2s;
+}
+
+footer p {
+    color: #111116;
+
+    font-size: 0.95rem;
+
+    letter-spacing: 0.4px;
+}
+
+footer p strong {
+    color: #7c3aed;
+
+    font-weight: 800;
+}
+
+footer small {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #9899a3;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 1px;
 }
 
 
-/* ==============================
+/* =========================================
+   ANIMACIONES
+   ========================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotar {
+    0%,
+    100% {
+        transform: translateY(5px) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(3deg);
+    }
+}
+
+
+/* =========================================
    TABLET
-   ============================== */
+   ========================================= */
 
 @media (max-width: 700px) {
 
     body {
-        padding: 20px 12px;
+        padding: 25px 14px;
     }
 
     .contenedor {
-        padding: 24px;
+        padding: 34px 26px;
+
+        border-radius: 24px;
     }
 
     .encabezado {
-        align-items: flex-start;
+        align-items: center;
+
+        gap: 25px;
     }
 
+    h1 {
+        letter-spacing: -2px;
+    }
+
+    .tabla-header span,
+    .fila span,
+    .fila strong {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 
-/* ==============================
+/* =========================================
    MÓVIL
-   ============================== */
+   ========================================= */
 
-@media (max-width: 500px) {
+@media (max-width: 520px) {
 
     body {
         padding: 12px;
+
         align-items: flex-start;
     }
 
     .contenedor {
-        padding: 20px 16px;
-        border-radius: 16px;
+        padding: 25px 18px;
+
+        border-radius: 20px;
+
+        margin-top: 8px;
+    }
+
+    .logo-matematico {
+        width: 44px;
+        height: 44px;
+
+        margin-bottom: 24px;
     }
 
     .encabezado {
         flex-direction: column;
-        gap: 18px;
+
+        align-items: stretch;
+
+        gap: 22px;
+
+        margin-bottom: 28px;
+    }
+
+    h1 {
+        font-size: clamp(2.7rem, 14vw, 4rem);
+
+        letter-spacing: -2px;
+    }
+
+    .encabezado p {
+        font-size: 0.95rem;
+
+        margin-top: 14px;
     }
 
     .btn-probar {
         width: 100%;
-        padding: 14px;
+
+        padding: 16px;
+    }
+
+    .tabla-container {
+        border-radius: 16px;
+    }
+
+    .tabla-header {
+        min-height: 50px;
+
+        font-size: 0.68rem;
+
+        letter-spacing: 1px;
     }
 
     .tabla-header span,
     .fila span,
     .fila strong {
-        padding: 14px 16px;
+        padding: 15px 14px;
     }
 
-    .fila span,
-    .fila strong {
-        font-size: 0.95rem;
+    .fila {
+        min-height: 60px;
     }
 
+    footer {
+        margin-top: 32px;
+    }
+
+    .simbolos-matematicos {
+        height: 38px;
+    }
 }
 
 
-/* ==============================
+/* =========================================
    MÓVILES PEQUEÑOS
-   ============================== */
+   ========================================= */
 
 @media (max-width: 350px) {
 
     .contenedor {
-        padding: 16px 12px;
+        padding: 22px 13px;
+    }
+
+    .etiqueta {
+        font-size: 0.65rem;
+
+        letter-spacing: 1.5px;
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
     }
 
     .tabla-header span,
     .fila span,
     .fila strong {
-        padding: 12px;
+        padding: 13px 10px;
     }
 
+    .fila span {
+        font-size: 0.95rem;
+    }
+
+    .fila strong {
+        font-size: 1.05rem;
+    }
+
+    .simbolos-matematicos span {
+        font-size: 1.4rem;
+    }
 }
+
+
+/* =========================================
+   DISPOSITIVOS CON POCO ALTO
+   ========================================= */
+
+@media (max-height: 700px) and (min-width: 521px) {
+
+    body {
+        align-items: flex-start;
+    }
+
+    .contenedor {
+        margin-top: 20px;
+    }
+}
+
+
+/* =========================================
+   REDUCCIÓN DE MOVIMIENTO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
+

@@ -1,0 +1,26 @@
+Toma el rol de Programador FullStack y diseñador Frontend 
+
+Objetivo: Integrar Styles Professional a la web con tematica 
+moderna llamativa para personas que buscan una web perfecta 
+de tablas de multiplicar. 
+
+Acciones: 
+1.usa tipografia y animaciones UIX tipo Apple con letras 
+grandes visiblemente atractiva matematicamente. 
+2.crea un pie de pagina Matematico con simbolos matematicos flotantes 
+translucidos que diga principalemente: Creado por JAEVIT 
+3.Maneja perfectamente el espacio en Divs creando una visibilidad 
+perfecta en tamaño de las tablas y los resultados. 
+4.Usa fondos limpios blancos con animaciones en botones que al pasar 
+el mouse cambien de color de azul a violeta elegantemente al stilo apple. 
+5.Usa como color principal el violeta y negro en filos y sombras. 
+6.Crea un logo matematico moderno pequeño cuadrado con bordes redondeados 
+en la esquina superior izquierda. 
+7.El boton probar esta negro muy bien, pero al pasar el mouse por encima 
+debe tener una animacion de cambio de colores que vayan desde azul a violeta. 
+8.Controla perfectamente el orden en espacios para que visualmente sea 
+atractivo para publico matematico. 
+9.Verifica el correcto funcionamiento del Responsive. 
+
+Dame los nuevos cambios en el CSS y HTML de ser necesario, dame los codigos 
+por separado.
