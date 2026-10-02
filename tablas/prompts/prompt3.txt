@@ -1,0 +1,27 @@
+Toma el rol programador fullStack y Diseñador Frontend de 
+alta experiencia
+
+Objetivo: Añade una caja de texto para ingreso de numero 
+de tabla que el usuario necesitaria para al aplastar boton 
+probar cargue esa tabla.
+Acciones:
+
+1. Añadir Caja de texto en posicion de visibilidad correcta 
+para el usuario sin cambiar ningun diseño actual.
+2. En el h1 Tabla del 3 numero tres esta en morado y es grande 
+perfectamente visual para ahi colocar sin dañar la visibilidad 
+del h1 en tamaño y colores quiero que solo es numero 3 morado 
+sea el que el usuario pueda cambiar para tomar ese dato para 
+generar las tablas.
+3. Solamente debes cambiar el HTML Y CSS para la modificacion 
+del ingreso de info del usuario.
+4. Verifica correcto Responsive en todos los dispositivos.
+5. No debes hacer funciones solo hacer que el numero del h1 
+despues del texto: Tabla del.. sea el valor ingresado por el 
+usuario.
+6. Trabajamos Caja de texto y diseño, no funciones.
+7. Crea una animacion cuando el usuario seleccione el numero 
+de tabla a mostrar, que el numero tenga animacion moderna unica 
+similar al logo.
+
+Entrega el HTML y CSS separado.
