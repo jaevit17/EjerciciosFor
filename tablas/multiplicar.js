@@ -1,7 +1,7 @@
 //Funciones para tablas de Multiplicacion
 
 //Genera Tablas
-function generarTablas(){
+function generarTablas(num){
     let contenido="";
     let cmpContenedorTablas=document.getElementById("contenedorTablas");
     for(let i=1;i<=10;i++){
@@ -9,9 +9,15 @@ function generarTablas(){
        que toma se guardan en la misma variable 
        si ponemos (=) solo tomara la ultima linea de vuelta*/
     contenido+="<div class='fila'>"+
-                "<span>5 × "+i+"</span>"+
-                "<strong>"+(5*i)+"</strong>"+
+                "<span>"+num+" × "+i+"</span>"+
+                "<strong>"+(num*i)+"</strong>"+
                 "</div>";
     }
     cmpContenedorTablas.innerHTML=contenido;
+}
+
+function generarNumeroTabla(){
+    let cmpNumTabla=document.getElementById("txtNumeroTabla");
+    let NumTabla=cmpNumTabla.value;
+    generarTablas(NumTabla);
 }
