@@ -9,8 +9,8 @@ function generarTablas(){
        que toma se guardan en la misma variable 
        si ponemos (=) solo tomara la ultima linea de vuelta*/
     contenido+="<div class='fila'>"+
-                "<span>3 × "+i+"</span>"+
-                "<strong>"+(3*i)+"</strong>"+
+                "<span>5 × "+i+"</span>"+
+                "<strong>"+(5*i)+"</strong>"+
                 "</div>";
     }
     cmpContenedorTablas.innerHTML=contenido;
